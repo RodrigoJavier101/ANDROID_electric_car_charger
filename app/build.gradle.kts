@@ -13,13 +13,13 @@ import org.jetbrains.kotlin.konan.properties.Properties
 //        .inputStream()
 //)
 
-val prop: Properties = Properties()
-
-prop.load(
-    project.rootProject
-        .file("local.properties")
-        .inputStream()
-)
+//val prop: Properties = Properties()
+//
+//prop.load(
+//    project.rootProject
+//        .file("local.properties")
+//        .inputStream()
+//)
 
 
 plugins {
@@ -56,47 +56,47 @@ android {
             )
         }
     }
-    flavorDimensions += "version"
-    productFlavors {
-
-        create("Charger") {
-            applicationIdSuffix = ".Charger"
-            versionNameSuffix = "1_Charger"
-
-            resValue(
-                "string",
-                "key_map",
-                prop.getProperty("API_MAP_KEY")
-
-            )
-
-            resValue(
-                "string",
-                "app_name",
-                "Charger"
-            )
-
-            buildConfigField(
-                "String",
-                "URL_BASE",
-                prop.getProperty("URL_BASE")
-            )
-
-            buildConfigField(
-                "String",
-                "URL_ENDPOINT",
-                prop.getProperty("URL_ENDPOINT")
-            )
-
-            buildConfigField(
-                "String",
-                "COMPANY_ID",
-                prop.getProperty("COMPANY_ID")
-            )
-
-        }
-
-    }
+//    flavorDimensions += "version"
+//    productFlavors {
+//
+//        create("Charger") {
+//            applicationIdSuffix = ".Charger"
+//            versionNameSuffix = "1_Charger"
+//
+//            resValue(
+//                "string",
+//                "key_map",
+//                prop.getProperty("API_MAP_KEY")
+//
+//            )
+//
+//            resValue(
+//                "string",
+//                "app_name",
+//                "Charger"
+//            )
+//
+//            buildConfigField(
+//                "String",
+//                "URL_BASE",
+//                prop.getProperty("URL_BASE")
+//            )
+//
+//            buildConfigField(
+//                "String",
+//                "URL_ENDPOINT",
+//                prop.getProperty("URL_ENDPOINT")
+//            )
+//
+//            buildConfigField(
+//                "String",
+//                "COMPANY_ID",
+//                prop.getProperty("COMPANY_ID")
+//            )
+//
+//        }
+//
+//    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
